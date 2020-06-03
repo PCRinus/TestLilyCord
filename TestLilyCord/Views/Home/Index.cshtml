@@ -2,17 +2,41 @@
     ViewBag.Title = "Home Page";
 }
 
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                @Html.ActionLink("Login pentru pacienti", "FormLogin", "Login")
-            </div>
-            <div class="col">
-                @Html.ActionLink("Login pentru medici", "FormLogin", "Login")
-            </div>
-            <div class="col">
-                @Html.ActionLink("Inregistrare pentru toti userii", "FormRegister", "Login")
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            @Html.ActionLink("Login pentru pacienti", "FormLogin", "Login")
+        </div>
+        <div class="col">
+            @Html.ActionLink("Login pentru medici", "FormLogin", "Login")
+        </div>
+        <div class="col">
+            @Html.ActionLink("Inregistrare pentru toti userii", "FormRegister", "Login")
         </div>
     </div>
+
+    <div class="row">
+        <div class="col">
+            @Html.ActionLink("Fomulare adaugare pacient - testare", "Signup_Pacient", "Pacient")
+        </div>
+        <div class="col">
+            @Html.ActionLink("Formulare adaugare medici - testare", "Signup_Medici", "Medic")
+        </div>
+        <div class="col">
+            @Html.ActionLink("Inregistrare pentru toti userii", "FormRegister", "Login")
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            @Html.ActionLink("View toti pacientii - testare", "ViewPacient", "Pacient")
+        </div>
+        <div class="col">
+            @Html.ActionLink("View toti medicii - testare", "ViewMedici", "Medic")
+        </div>
+        <div class="col">
+            @Html.ActionLink("Inregistrare pentru toti userii", "FormRegister", "Login")
+        </div>
+    </div>
+</div>
 

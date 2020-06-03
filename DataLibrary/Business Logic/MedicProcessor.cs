@@ -10,23 +10,30 @@ namespace DataLibrary.Business_Logic
 {
     public static class MedicProcessor
     {
-        public static int CreateMedic(int medicID, string email, string nume, string prenume)
+        public static int CreateMedic(/*int id,*/ int medicId, string nume, string prenume, string email, string grad_profesional, int telefon, string specilaizare)
         {
             MedicModel data = new MedicModel
             {
-                MedicId = medicID,
-                Email = email,
+                //Id = id,
+                MedicId = medicId,
                 Nume = nume,
-                Prenume = prenume
+                Prenume = prenume,
+                Email=email,
+                Grad_profesional=grad_profesional,
+                Telefon=telefon,
+                Specializare=specilaizare
             };
 
-            string sql = @"insert into dbo.Medici (medicID, email, nume, prenume) values (@MedicId, @Email, @Nume, @Prenume);"; 
+            //string sql = @"insert into dbo.Medici (id, medicid, nume, prenume, email, grad_profesional,telefon,specializare) values (@Id, @MedicId, @Nume, @Prenume, @Email, @Grad_profesional, @Telefon, @Specializare);"; 
+
+            string sql = @"insert into dbo.Medici (medicid, nume, prenume, email, grad_profesional,telefon,specializare) values (@MedicId, @Nume, @Prenume, @Email, @Grad_profesional, @Telefon, @Specializare);";
 
             return SQLDataAceess.SaveData(sql, data);
         }
+
         public static List<MedicModel> LoadMedic()
         {
-            string sql = @"select Id, MedicId, Nume, Prenume, Email from dbo.Medici;";
+            string sql = @"select MedicId, Nume, Prenume, Email, Grad_profesional, Telefon, Specializare from dbo.Medici;";
             return SQLDataAceess.LoadData<MedicModel>(sql);
         }
     }

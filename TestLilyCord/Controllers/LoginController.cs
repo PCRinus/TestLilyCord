@@ -58,7 +58,11 @@ namespace TestLilyCord.Controllers
             if (ModelState.IsValid)
             {
                 int recordsCreated = LoginProcessor.CreateLogin(model.Email, model.Parola);
-                return RedirectToAction("Index", "Home", new { area = "" });
+                return RedirectToAction("Success", "Home", new { area = "" });
+            }
+            else
+            {
+                return RedirectToAction("Failure", "Home", new { area = "" });
             }
             return View();
         }

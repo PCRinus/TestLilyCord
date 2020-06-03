@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<TestLilyCord.Models.PacientModel>
 
 @{
-    ViewBag.Title = "ViewPacient";
+    ViewBag.Title = "ViewSpecificPacient";
 }
 
-<h2>ViewPacient</h2>
+<h2>ViewSpecificPacient</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -34,6 +34,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Greutate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Diagnostic)
         </th>
         <th></th>
     </tr>

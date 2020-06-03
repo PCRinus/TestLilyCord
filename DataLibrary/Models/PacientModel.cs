@@ -16,7 +16,7 @@ namespace DataLibrary.Models
         public string Adresa { get; set; }
         public int Telefon { get; set; }
         public int Varsta { get; set; }
+        public int Inaltime { get; set; }
         public int Greutate { get; set; }
-        public string Diagnostic { get; set; }
     }
 }

@@ -29,7 +29,7 @@ namespace DataLibrary.Business_Logic
 
         public static List<DiagnosticModel> LoadDiagnostic()
         {
-            string sql = @"select dbo.Diagnostic.id, dbo.Diagnostic.diagnostic, dbo.Diagnostic.investigatii_efectuate, dbo.Diagnostic.rezultat_investigatii, dbo.Diagnostic.tratament, dbo.Diagnostic.medicatie, dbo.Login.email from dbo.Diagnostic inner join dbo.Login on dbo.Diagnostic.email = dbo.Login.email;";
+            string sql = @"select dbo.Diagnostic.id, dbo.Diagnostic.diagnostic, dbo.Diagnostic.investigatii_efectuate, dbo.Diagnostic.rezultat_investigatii, dbo.Diagnostic.tratament, dbo.Diagnostic.medicatie, dbo.Pacient.email from dbo.Diagnostic inner join dbo.Pacient on dbo.Diagnostic.email = dbo.Pacient.email;";
             return SQLDataAceess.LoadData<DiagnosticModel>(sql);
         }
     }

@@ -31,11 +31,54 @@ namespace TestLilyCord.Controllers
                     Telefon=row.Telefon,
                     Varsta=row.Varsta,
                     Greutate=row.Greutate,
-                    Diagnostic=row.Diagnostic
+                    //Diagnostic=row.Diagnostic
                 });
             }
 
             return View(pacient);
+        }
+
+        public ActionResult ViewSpecificPacient()
+        {
+            var data = PacientProcessor.LoadSpecificPacient();
+            List<PacientModel> pacient = new List<PacientModel>();
+
+            foreach (var row in data)
+            {
+                pacient.Add(new PacientModel
+                {
+                    id = row.id,
+                    Email = row.Email,
+                    Nume = row.Nume,
+                    Prenume = row.Prenume,
+                    CNP = row.CNP,
+                    Adresa = row.Adresa,
+                    Telefon = row.Telefon,
+                    Varsta = row.Varsta,
+                    Greutate = row.Greutate,
+                    //Diagnostic = row.Diagnostic
+                });
+            }
+
+            return View(pacient);
+        }
+
+        public ActionResult Signup_Pacient()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Signup_Pacient(PacientModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                int recordsCreated = PacientProcessor.CreatePacient(model.Email, model.Nume, model.Prenume, model.CNP, model.Adresa, model.Telefon, model.Varsta, model.Inaltime, model.Greutate);
+                
+                return RedirectToAction("Index", "Home", new { area = "" });
+            }
+            return View();
         }
 
         public ActionResult ViewDiagnostic()

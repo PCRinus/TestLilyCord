@@ -10,8 +10,11 @@ namespace DataLibrary.Models
     {
         public int Id { get; set; }
         public int MedicId { get; set; }
-        public string Email { get; set; }
         public string Nume { get; set; }
         public string Prenume { get; set; }
+        public string Email { get; set; }
+        public string Grad_profesional { get; set; }
+        public int Telefon { get; set; }
+        public string Specializare { get; set; }
     }
 }
