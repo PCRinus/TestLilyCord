@@ -1,0 +1,58 @@
+﻿@model IEnumerable<TestLilyCord.Models.DiagnosticModel>
+
+@{
+    ViewBag.Title = "ViewDiagnostic";
+}
+
+<h2>ViewDiagnostic</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Diagnostic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Investigatii_efectuate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rezultate_investigatii)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tratament)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Medicatie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Diagnostic)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Investigatii_efectuate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rezultate_investigatii)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tratament)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Medicatie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+    </tr>
+}
+
+</table>
